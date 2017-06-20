@@ -142,7 +142,11 @@ public class MainActivity extends FragmentActivity {
      * @return
      */
     private BaseFragment getFragment() {
-        BaseFragment baseFragment = mBaseFragments.get(position);
-        return baseFragment;
+        if (mBaseFragments != null && mBaseFragments.size() > 0) {
+            BaseFragment baseFragment = mBaseFragments.get(position);
+            return baseFragment;
+        }
+        return null;
+
     }
 }
